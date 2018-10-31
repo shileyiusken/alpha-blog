@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlphaBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <h1>Create an article</h1>
+    <%= form_for @article do |f| %>
+        <p>
+        <%= f.label :title %><br/>
+        <%= f.text_field :title %>
+        </p>
+        <p>
+        <%= f.label :description%><br/>
+        <%= f.text_area :description%>
+        </p>
+        <p>
+        <%= f.submit %>
+        </p>
+    <% end %>
+    <%= link_to 'Home', root_path%>
+  </body>
+</html>
