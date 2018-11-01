@@ -10,15 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
-    <h1>Create an article</h1>
+  <h1>Edit existing article</h1>
     <% if @article.errors.any? %>
-    <ul>
-      <h2>The following errors prevented the article to be created</h2>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+        <ul>
+            <h2>The following errors prevented the article to be created</h2>
+            <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
     <% end %>
 
     <%= form_for @article do |f| %>
@@ -34,6 +33,9 @@
         <%= f.submit %>
         </p>
     <% end %>
-    <%= link_to 'Back to article listing', articles_path%>
+    
+    <%= yield %>
+    <%= link_to 'Back to article listing', articles_path%> |
+    <%= link_to 'Home', root_path%>
   </body>
 </html>

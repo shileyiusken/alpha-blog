@@ -19,5 +19,8 @@
       Description: <%= @article.description %>
   </p>
     <%= yield %>
+    <%= link_to 'Edit this article', edit_article_path(@article) %> |
+    <%= link_to 'Back to article listing', articles_path%> |
+    <%= link_to 'Home', root_path%>
   </body>
 </html>

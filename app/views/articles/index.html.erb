@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlphaBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <h1>Listing all articles</h1>
+  <p><%= link_to 'Create new article', new_article_path%></p>
+  <table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.description %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Show', article_path(article)%></td>
+      </tr>
+    <% end %>
+  </table>
+    <%= yield %>
+  </body>
+</html>
