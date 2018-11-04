@@ -2,11 +2,6 @@
 <html>
   <head>
     <title>AlphaBlog</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -18,7 +13,6 @@
   <p>
       Description: <%= @article.description %>
   </p>
-    <%= yield %>
     <%= link_to 'Edit this article', edit_article_path(@article) %> |
     <%= link_to 'Back to article listing', articles_path%> |
     <%= link_to 'Home', root_path%>
